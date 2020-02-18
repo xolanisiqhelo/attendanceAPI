@@ -1,6 +1,8 @@
 package com.attendanceAPI.service;
 
+
 import java.util.List;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,17 +18,24 @@ public class AttandenceService {
 
 	@Autowired AttandenceRepository attandenceRepository;
 	@Autowired StudentRepository registerRepository;
+	@Autowired StartSessionService startSessionService;
 
 	private static final Logger logger=LoggerFactory.getLogger(AttandenceService.class);
 	
 	public Attandence saveAttandence(Attandence  attandence ) 
 	{
 	
-		logger.info("data info---->"+attandence.getStudentNo().toString());
+//		logger.info("data info---->"+attandence.getStudentNo().toString());
 		try {
 //			if(registerRepository.findByStudentNo(attandence.getStudentNo().toString())!=null)
 //			{
-				logger.info("save student number---->"+attandence.getStudentNo());
+				
+	
+				List<Attandence> attand=startSessionService.findStartSession("2020");
+				logger.info("save student number---->"+attand);
+				attand.add(attandence);
+				logger.info("save student number----1111>"+attand.add(attandence));
+			
 				return attandenceRepository.save(attandence);
 	
 //			}else

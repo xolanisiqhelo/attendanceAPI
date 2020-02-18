@@ -31,7 +31,6 @@ public class SubjectController {
 			return new ResponseEntity<>(subjectService.saveSubjects(subject),HttpStatus.OK);
 			
 		} catch (Exception e) {
-			// TODO: handle exception
 			return new  ResponseEntity<>(e.getMessage(),HttpStatus.BAD_GATEWAY);
 			
 		}
@@ -42,7 +41,6 @@ public class SubjectController {
 			return new ResponseEntity<Object>(subjectService.ListAllSubjects(),HttpStatus.OK);
 			
 		} catch (Exception e) {
-			// TODO: handle exception
 			return new ResponseEntity<Object>(e.getMessage(),HttpStatus.BAD_GATEWAY);
 		}
 	}
@@ -53,7 +51,6 @@ public class SubjectController {
 			return new ResponseEntity<Object>(subjectService.findSubjectById(id),HttpStatus.OK);
 			
 		} catch (Exception e) {
-			// TODO: handle exception
 			return new ResponseEntity<Object>(e.getMessage(),HttpStatus.BAD_GATEWAY);
 		}
 	}

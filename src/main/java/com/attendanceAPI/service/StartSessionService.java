@@ -27,8 +27,9 @@ public class StartSessionService {
 	@Autowired TimeTableRepository timeTableRepository;
     @Autowired SessionRepository sessionRepository;
     private Subject subject;	
+    private String subjectCode;
 	
-	public Session findStartSession(String lectureNo)
+	public List<Attandence> findStartSession(String lectureNo) 
 	{
 		List<Attandence>attandences =  new ArrayList<>();
 		try {			
@@ -43,39 +44,34 @@ public class StartSessionService {
 			    LocalTime time = LocalTime.now();
 				 if(time.isAfter(startTime)&&time.isBefore(endTime))
 		         {  this.subject=rest.getSubject();
-		        // createSession();
 		         }
 		   });
-		   
-
 	    	 Session session=new Session();
 	    	 session.setSubject(subject);
-	    	 session.setStatus(true);
 	    	 session.setAttandences(attandences);
-	    	 Session ssion=sessionRepository.save(session);
-	    	 return ssion;
+	    	 sessionRepository.findAll().forEach((result)->
+	    	 {
+	    		 subjectCode=result.getSubject().getSubjectCode();
+	    	 });
+	    	 if(subjectCode!=session.getSubject().getSubjectCode())
+    		 {
+    	    	 Session ses=sessionRepository.save(session);
+    	    	 return  ses.getAttandences();
+    		 }else{return null;}
+
 		} catch (Exception e) {
 			throw e;
 		}
 		
 		
 	}
-//     public Session createSession()
-//     {
-//    	 List<Attandence>attandences =  new ArrayList<>();
-//    	 
-//    	 Session session=new Session();
-//    	 session.setSubject(subject);
-//    	 session.setStatus(true);
-//    	 session.setAttandences(attandences);
-//    	 
-//    	 try {
-//    		 Session ssion=sessionRepository.save(session);
-//			
-//    		 return ssion;
-//		} catch (Exception e) {
-//			return null;
-//		}
-//     }
+	
+	public List<Session> listAll(){
+		
+		List<Session>  session=sessionRepository.findAll();
+		return session;
+				
+	}
+
 
 }

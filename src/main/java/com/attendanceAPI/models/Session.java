@@ -1,4 +1,4 @@
-package com.attendanceAPI.models;
+	package com.attendanceAPI.models;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class Session {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
-	private Boolean status;
+//	private Boolean status;
 	@OneToOne(cascade = CascadeType.ALL)
 	private  Subject subject;
 	@JoinTable(name="sessionAttandence", joinColumns=
@@ -37,18 +37,19 @@ public class Session {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public Boolean getStatus() {
-		return status;
-	}
+//	public Boolean getStatus() {
+//		return status;
+//	}
+//	public void setStatus(Boolean status) {
+//		this.status = status;
+//	}
 	public Subject getSubject() {
 		return subject;
 	}
 	public void setSubject(Subject subject) {
 		this.subject = subject;
 	}
-	public void setStatus(Boolean status) {
-		this.status = status;
-	}
+
 	public List<Attandence> getAttandences() {
 		return attandences;
 	}
