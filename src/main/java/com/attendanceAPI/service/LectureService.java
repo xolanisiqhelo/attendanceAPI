@@ -36,7 +36,7 @@ public class LectureService {
 			throw e;
 		}
 	}
-	public Optional<Lecture> findLectureByID(long id)
+	public Optional<Lecture> findLectureByID(Integer id)
 	{
 		try {
 			Optional<Lecture> lect=lectureRepository.findById(id);

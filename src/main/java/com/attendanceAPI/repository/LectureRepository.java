@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.attendanceAPI.models.Lecture;
 @Repository
-public interface LectureRepository  extends JpaRepository<Lecture, Long>{
+public interface LectureRepository  extends JpaRepository<Lecture, Integer>{
 	Lecture	 findLectureBylectureNo(String lectureNo);
 
 }

@@ -45,7 +45,7 @@ public class SubjectController {
 		}
 	}
 	@RequestMapping(value = "/listSubject{id}", method = RequestMethod.GET,produces = "application/json")
-	public ResponseEntity<Object>ListById(@RequestParam(required=true)long id)
+	public ResponseEntity<Object>ListById(@RequestParam(required=true)Integer id)
 	{
 		try {
 			return new ResponseEntity<Object>(subjectService.findSubjectById(id),HttpStatus.OK);

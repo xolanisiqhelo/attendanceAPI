@@ -43,7 +43,7 @@ public class TimeTableController {
 	}
 	
 	@RequestMapping(value = "/ListTimeTable{id}", method = RequestMethod.GET,produces = "application/json")
-	public  ResponseEntity<Object>ListById(@RequestParam(required=true)Long id)
+	public  ResponseEntity<Object>ListById(@RequestParam(required=true)Integer id)
 	{
 		try {
 			

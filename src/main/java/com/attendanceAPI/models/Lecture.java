@@ -15,17 +15,17 @@ import com.google.gson.Gson;
 public class Lecture {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
+	private Integer id;
 	private String name;
 	private String surname;
 	private String lectureNo;
 	private  String phoneNumber;
 	private String email;
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {

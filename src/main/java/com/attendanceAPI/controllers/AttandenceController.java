@@ -16,6 +16,7 @@ import com.attendanceAPI.service.AttandenceService;
 
 import io.swagger.annotations.Api;
 
+
 @RestController
 @RequestMapping("/api/v1")
 @Api(value ="attandence student information",description = " attandence student information for  all user in the system")
@@ -59,5 +60,6 @@ public class AttandenceController {
 		
 	}
 	
+
 	
 }

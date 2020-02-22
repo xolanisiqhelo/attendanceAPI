@@ -44,7 +44,7 @@ public class LectureController {
 		}
 	}
 	@RequestMapping(value = "/listLecture{id}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<Object>listById(@RequestParam(required=true) long id)
+	public ResponseEntity<Object>listById(@RequestParam(required=true) Integer id)
 	{
 		try {
 			return new  ResponseEntity<Object>(lectureService.findLectureByID(id),HttpStatus.OK);

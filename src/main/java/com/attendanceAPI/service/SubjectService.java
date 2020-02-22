@@ -40,7 +40,7 @@ public class SubjectService {
 		}
 	}
 	
-	public Optional<Subject> findSubjectById(long id)
+	public Optional<Subject> findSubjectById(Integer id)
 	{
 		try {
 			Optional<Subject>sub =subjectRepository.findById(id);

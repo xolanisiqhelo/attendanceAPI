@@ -15,15 +15,15 @@ public class Subject {
 	
      @Id
      @GeneratedValue(strategy=GenerationType.IDENTITY)
-     private long id;  
+     private Integer id;  
      private String subjctName;
      private String subjectCode;
      
      
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getSubjctName() {
@@ -42,8 +42,7 @@ public class Subject {
 	@Override
     public String toString() {
         return new Gson().toJson(this);
-    }
-     
+    }     
 }
 
 

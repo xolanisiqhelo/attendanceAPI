@@ -16,13 +16,13 @@ import com.google.gson.Gson;
 public class Attandence {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
+	private Integer id;
 	private String studentNo;
 	Date date = new Date();
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getStudentNo() {

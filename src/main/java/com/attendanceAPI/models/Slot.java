@@ -16,7 +16,7 @@ import com.google.gson.Gson;
 public class Slot {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
+	private Integer id;
 	private int slotNumber;
 	@Column(name = "start_session")
 	private String startSession;
@@ -27,10 +27,10 @@ public class Slot {
 	@OneToOne(cascade=CascadeType.ALL)
 	private Subject subject;
 	
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public int getSlotNumber() {

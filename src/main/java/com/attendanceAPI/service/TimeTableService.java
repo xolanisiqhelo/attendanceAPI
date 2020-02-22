@@ -48,7 +48,7 @@ public class TimeTableService {
 		}
 	}
 	
-	public Optional<TimeTable> findLectureById(long id)
+	public Optional<TimeTable> findLectureById(Integer id)
 	{
 		try {
 			

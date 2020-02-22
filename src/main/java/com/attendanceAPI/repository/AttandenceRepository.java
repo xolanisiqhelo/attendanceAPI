@@ -7,9 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import com.attendanceAPI.models.Attandence;
 @Repository
-public interface AttandenceRepository extends JpaRepository<Attandence, Long> {
+public interface AttandenceRepository extends JpaRepository<Attandence, Integer> {
 
 	List<Attandence> findByStudentNo(String StudentNo);
+
+	Attandence save(List<Attandence> attand);
 
 
 

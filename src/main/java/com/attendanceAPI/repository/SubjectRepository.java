@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.attendanceAPI.models.Subject;
 
 @Repository
-public interface SubjectRepository  extends JpaRepository<Subject, Long>{
+public interface SubjectRepository  extends JpaRepository<Subject, Integer>{
+	
 
 }
